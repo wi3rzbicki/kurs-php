@@ -82,7 +82,7 @@ else
       echo "Imię klienta: $imie;<br>";
       echo "Adres e-mail: $email;<br>";
       echo "Numer telefonu: $tel;<br>";
-      echo "Treść: $tresc;<br>";
+      echo "Treść: $tresc;<br><br>";
       sprawdz_domene($email);
 
    }        
