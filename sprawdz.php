@@ -45,6 +45,8 @@ $imie = $_POST['imie'];
 $tel = $_POST['telefon'];
 $tresc = $_POST['tresc'];
 $blad_danych = false;
+$czy = strpos($tresc, "cholera");
+
 
 function sprawdz_domene($email){
    $mail = explode("@", $email);
@@ -67,10 +69,14 @@ if (!sprawdz_telefon($tel))
       echo "Błędny format telefonu<br>";
       $blad_danych = true;
    }
+if ($czy == true){
+   echo "Tekst zawiera wulgarne słownictwo.<br>";
+   $blad_danych = true;
+}
 $tresc = sprawdz_tresc($tresc);
 if (!$tresc)
    {
-      echo "Niepoprawna treść";
+      echo "Niepoprawna treść<br>";
       $blad_danych = true;
    }
 if ($blad_danych)
