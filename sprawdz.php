@@ -47,7 +47,6 @@ $tresc = $_POST['tresc'];
 $blad_danych = false;
 $czy = strpos($tresc, "cholera");
 
-
 function sprawdz_domene($email){
    $mail = explode("@", $email);
    echo "Domena: ".$mail[1]."<br>";
@@ -90,6 +89,9 @@ else
       echo "Numer telefonu: $tel;<br>";
       echo "Treść: $tresc;<br><br>";
       sprawdz_domene($email);
+      $tab = array($email,$imie,$tel,$tresc);
+      $dane = implode($tab);
+      echo $dane;
 
    }        
 
