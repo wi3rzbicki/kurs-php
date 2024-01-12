@@ -3,7 +3,7 @@
    <title>Formularz kontaktowy</title>
 </head>
 <body>
-   <form action="sprawdz.php" method="post" >
+   <form action="check_form.php" method="post" >
       Imię: <input type="text" name="imie" /><br/>
       Telefon: <input type="text" name="telefon" /><br/>
       E-mail: <input type="text" name="email" /><br/>
