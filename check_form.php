@@ -41,7 +41,7 @@ function sprawdz_tresc($tresc)
 
 function sprawdz_domene($email){
    $mail = explode("@", $email);
-   echo "Domena: ".$mail[1]."<br>";
+   echo "Domena : ".$mail[1]."<br>";
 }
 
 function main(){
