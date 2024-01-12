@@ -23,7 +23,7 @@ function sprawdz_imie($imie)
 
 function sprawdz_telefon($telefon)
 {
-   $sprawdz = '/^[0-9]{9}$/';
+   $sprawdz = '/^\+{0,1}[0-9]{9,11}$/';
    if(preg_match($sprawdz, $telefon))
       return true;
    else
