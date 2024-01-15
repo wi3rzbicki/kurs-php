@@ -8,9 +8,9 @@
 <body>
 
     <form method="post">
-        tytuł <input type="text" name="title" /><br/>
-        treść <input type="text" name="content" /><br/>
-        opis <input type="text" name="description" /><br/>
+        tytuł <br><input type="text" name="title" /><br/>
+        treść <br><input type="text" name="content" /><br/>
+        opis <br><textarea name="description"></textarea><br/>
         <input type="submit" value="STWÓRZ"/><br/>
    </form>
 
