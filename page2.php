@@ -9,16 +9,21 @@ session_start();
     <title>Document</title>
 </head>
 <body>
+   <?php
+        if(isset($_POST['plec'])){
+            @$_SESSION['plec'] = $_POST['plec'];
+        }
+        
+        if(isset($_POST['wiek'])){
+            @$_SESSION['wiek'] = $_POST['wiek'];
+        }
+   ?>
     <form method="post" >
-        Plec: <input type="text" name="plec" /><br/>
-        Wiek: <input type="text" name="wiek" /><br/>
+        Plec: <input type="text" name="plec" value="<?php echo @$_SESSION['plec']; ?>"/><br/>
+        Wiek: <input type="text" name="wiek" value="<?php echo @$_SESSION['wiek']; ?>"/><br/>
         <input type="submit" value="OK" /><br/>
    </form>
    <button onclick="location.href='page1.php'">poprzednia</button>
    <button onclick="location.href=href='page3.php'">nastepna</button>
-   <?php
-        @$_SESSION['plec'] = $_POST['plec'];
-        @$_SESSION['wiek'] = $_POST['wiek'];
-   ?>
 </body>
 </html>
