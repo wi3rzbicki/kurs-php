@@ -20,9 +20,9 @@ session_start();
         }
    ?>
     <form method="post" >
-        Plec: <input type="text" name="plec" value="<?php echo @$_SESSION['plec']; ?>"/><br/>
-        Wiek: <input type="text" name="wiek" value="<?php echo @$_SESSION['wiek']; ?>"/><br/>
-        <input type="submit" value="OK" /><br/>
+        Plec: <input type="text" class="form-control-sm" name="plec" value="<?php echo @$_SESSION['plec']; ?>"/><br/>
+        Wiek: <input type="text" class="form-control-sm" name="wiek" value="<?php echo @$_SESSION['wiek']; ?>"/><br/>
+        <input type="submit" class="form-control-sm" value="OK" /><br/>
    </form>
    <button class="btn btn-primary" onclick="location.href='page1.php'">poprzednia</button>
    <button class="btn btn-success" onclick="location.href=href='page3.php'">nastepna</button>
