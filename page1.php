@@ -8,6 +8,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 </head>
 <body>
    <?php
@@ -16,7 +18,7 @@ session_start();
             @$_SESSION['nazwisko']  = $_POST['nazwisko'];
             }
    ?>
-    <form method="post" onsubmit="return validateForm();">
+    <form method="post" id="Form">
         Imię: <input type="text" class="form-control-sm" name="imie" id="imie" value="<?php echo @$_SESSION['imie']; ?>"/><br/>
         Nazwisko: <input type="text" class="form-control-sm" name="nazwisko" id="nazwisko" value="<?php echo @$_SESSION['nazwisko']; ?>"/><br/>
         <input type="submit" class="form-control-sm" value="OK" /><br/>
@@ -31,15 +33,24 @@ session_start();
    <button class="btn btn-primary" onclick="location.href='page3.php'">poprzednia</button>
    <button class="btn btn-success" onclick="location.href='page2.php'">nastepna</button>
    
-    <script>
-        function validateForm() {
-            var imie = document.getElementById('imie').value;
-            var nazwisko = document.getElementById('nazwisko').value;
-
-            if(imie.trim() === '' || nazwisko.trim() === '') {
-                alert('wypełnij oba pola');
-            }
-        }
+   <script>
+        $(document).ready(function(){
+            $("#Form").validate({
+                rules: {
+                    imie: {
+                        required: true
+                    },
+                    nazwisko: {
+                        required: true
+                    }
+                },
+                messages: {
+                    imie: "Proszę podać imię",
+                    nazwisko: "Proszę podać nazwisko"
+                }
+            });
+        });
     </script>
+
 </body>
 </html>
